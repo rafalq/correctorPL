@@ -1,6 +1,6 @@
 ## Przekształcak
 
-https://rafalq.github.io/correctorPL/
+https://rafalq.github.io/correctorPL/index.html
 
 Strona, na której możesz poprawić błednie rozkodowane polskie litery.
 
