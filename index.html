@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Przekształcak</title>
+</head>
+<body style="padding: 40px; background-color: #ecebeb;">
+  <h1>Przekształcak</h1>
+  <div>
+    <textarea id="string" name="pl-alphabet" rows="4" cols="60" placeholder="Oryginalny Tekst (Wklej tekst do poprawienia w to okno)" style="border: 1px solid #000;"></textarea>
+  </div>
+
+  <div style="margin-top: 30px;">
+    <textarea id="trans" rows="4" cols="60" placeholder="Przekształcony Tekst (Kliknij to okno by wybrać cały poprawiony tekst)" onclick="this.select();" readonly></textarea>
+  </div>
+
+  <script>
+    document.getElementById("string").oninput = correctPolishLetters;
+
+    function correctPolishLetters() {
+      var stringText = document.getElementById("string").value;
+
+      stringText = stringText.replace(/¹/g, 'ą');
+	  stringText = stringText.replace(/¥/g, 'Ą');
+
+      stringText = stringText.replace(/æ/g, 'ć');
+      stringText = stringText.replace(/Æ/g, 'Ć');
+
+      stringText = stringText.replace(/ê/g, 'ę');
+	  stringText = stringText.replace(/Ê/g, 'Ę');
+
+      stringText = stringText.replace(/³/g, 'ł');
+      stringText = stringText.replace(/£/g, 'Ł');
+
+      stringText = stringText.replace(/ñ/g, 'ń');
+	  stringText = stringText.replace(/Ñ/g, 'Ń');
+
+      stringText = stringText.replace(/œ/g, 'ś');
+      stringText = stringText.replace(/Œ/g, 'Ś');
+
+      stringText = stringText.replace(/Ÿ/g, 'ź');
+      stringText = stringText.replace(//g, 'Ź');
+
+      stringText = stringText.replace(/¿/g, 'ż');
+      stringText = stringText.replace(/¯/g, 'Ż');
+
+      document.getElementById("trans").textContent = stringText;
+    }
+
+  </script>
+</body>
+</html>
